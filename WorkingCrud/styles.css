@@ -1,62 +1,106 @@
 body {
   font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
 }
 
-#loginContainer, #userManagementContainer {
+.container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
+.login-container {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
 }
 
-input[type="email"],
-input[type="password"],
-input[type="text"],
-select {
+.login-form input {
+  display: block;
+  width: 100%;
   padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-button {
+.login-form button {
+  display: inline-block;
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-table {
+.user-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
-th, td {
+.user-table th,
+.user-table td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
 
-.actions-cell button {
+.user-table .actions-cell button {
   margin-right: 5px;
 }
 
-#editFormContainer {
+.form-container {
+  background-color: #f7f7f7;
+  padding: 20px;
   margin-top: 20px;
+  border-radius: 5px;
+  display: none;
 }
 
-#messageContainer {
+.form-container h2 {
+  margin-top: 0;
+}
+
+.form-container input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.message-container {
   margin-top: 20px;
   padding: 10px;
+  text-align: center;
 }
 
 .error {

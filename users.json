@@ -1,25 +1,23 @@
 [
   {
-    "name": "John",
-    "surname": "Doe",
-    "email": "john@example.com",
-    "password": "password123",
+    "email": "admin@example.com",
+    "password": "admin1",
+    "name": "Admin",
+    "surname": "User",
     "userType": "admin"
   },
   {
-    "name": "Jane",
-    "surname": "Smith",
-    "email": "jane@example.com",
-    "password": "password456",
+    "email": "librarian@example.com",
+    "password": "librarian123",
+    "name": "Librarian",
+    "surname": "User",
     "userType": "librarian"
   },
   {
-    "name": "Michael",
-    "surname": "Johnson",
-    "email": "michael@example.com",
-    "password": "password789",
+    "email": "reader@example.com",
+    "password": "reader123",
+    "name": "Reader",
+    "surname": "User",
     "userType": "reader"
   }
 ]
-
-

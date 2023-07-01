@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  margin-top: 20px;
+}
+
+#loginForm, #userForm, #userList {
+  margin-top: 20px;
+}
+
+input, button {
+  margin-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+#userForm button, #userList button {
+  margin-right: 10px;
+}

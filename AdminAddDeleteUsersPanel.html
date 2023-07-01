@@ -1,34 +1,41 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+  <title>User Management</title>
+  <link rel="stylesheet" href="AdminAddDeleteUsersPanel.css">
+</head>
+<body>
+  <div id="loginForm">
+    <h1>User Login</h1>
+    <label for="email">Email:</label>
+    <input type="text" id="email" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+    <button onclick="login()">Login</button>
+  </div>
 
-    <head>
-        <title>DaVinciUsersManagement</title>
-        <link rel="stylesheet" href="LoginFormStyle.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-    </head>
+  <div id="userForm" style="display: none;">
+    <h2>User Management</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" required>
+    <label for="email">Email:</label>
+    <input type="text" id="email" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+    <button onclick="saveUser()">Add User</button>
+    <button onclick="updateUser()">Update User</button>
+    <button onclick="deleteUser()">Delete User</button>
+    <button onclick="logout()">Logout</button>
+  </div>
 
-    <body>
+  <div id="userList" style="display: none;">
+    <h2>User List</h2>
+    <ul id="users"></ul>
+  </div>
 
-        <div class="main">
-
-            <div class="navbar">
-                <div class="icon">
-                    <h2 class="logo">DaVinciLibrary</h2>
-                </div>
-
-            </div>
-            <div class="content">
-                <div class="form">
-                    <div class="inputbox"><input name="email" type="email" placeholder="Enter your email"></input><label></label></div>
-                    <div class="inputbox"><input name="email" type="email" placeholder="Enter your email"></input><label></label></div>
-                    <div class="inputbox"><input name="password" type="password"  placeholder="Enter your password"></input><label></label></div>
-                </div>
-            </div>
-            
-        </div>
-
-        <script src="LoginFormScript.js"></script>
-
-    </body>
+  <script src="AdminAddDeleteUsersPanel.js"></script>
+</body>
 </html>

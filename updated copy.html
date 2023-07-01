@@ -1,47 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>User Management App</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <title>User Management System</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>User Management App</h1>
-
-  <form id="loginForm">
+  <div id="loginForm">
     <h2>Login</h2>
-    <input type="text" id="username" placeholder="Username" required>
-    <input type="password" id="loginPassword" placeholder="Password" required>
-    <button type="submit">Login</button>
-  </form>
+    <form>
+      <div>
+        <label>Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" id="loginPassword" required>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
 
-  <form id="userForm" style="display: none;">
+  <div id="userForm">
     <h2>Add User</h2>
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="password" id="userPassword" placeholder="Password" required>
-    <input type="text" id="name" placeholder="Name" required>
-    <input type="text" id="surname" placeholder="Surname" required>
-    <select id="userType">
-      <option value="admin">Admin</option>
-      <option value="librarian">Librarian</option>
-      <option value="reader">Reader</option>
-    </select>
-    <button type="submit" id="addUser">Add User</button>
-  </form>
+    <form>
+      <div>
+        <label>Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" id="userPassword" required>
+      </div>
+      <div>
+        <label>Name:</label>
+        <input type="text" id="name" required>
+      </div>
+      <div>
+        <label>Surname:</label>
+        <input type="text" id="surname" required>
+      </div>
+      <div>
+        <label>User Type:</label>
+        <select id="userType">
+          <option value="admin">Admin</option>
+          <option value="librarian">Librarian</option>
+          <option value="reader">Reader</option>
+        </select>
+      </div>
+      <button type="submit">Add User</button>
+      <button type="button" class="cancel-btn">Cancel</button>
+    </form>
+  </div>
 
-  <table id="userTable">
-    <thead>
-      <tr>
-        <th>Email</th>
-        <th>Password</th>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>User Type</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <div id="userTable">
+    <h2>User List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>User Type</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div id="editFormContainer">
+    <h2>Edit User</h2>
+    <form id="editForm">
+      <div>
+        <label>Email:</label>
+        <input type="email" id="editEmail" required>
+      </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" id="editPassword" required>
+      </div>
+      <div>
+        <label>Name:</label>
+        <input type="text" id="editName" required>
+      </div>
+      <div>
+        <label>Surname:</label>
+        <input type="text" id="editSurname" required>
+      </div>
+      <div>
+        <label>User Type:</label>
+        <select id="editUserType">
+          <option value="admin">Admin</option>
+          <option value="librarian">Librarian</option>
+          <option value="reader">Reader</option>
+        </select>
+      </div>
+      <button type="submit">Update User</button>
+      <button type="button" class="cancel-btn">Cancel</button>
+    </form>
+  </div>
+
+  <div id="message"></div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
+

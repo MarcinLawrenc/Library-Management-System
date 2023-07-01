@@ -34,23 +34,33 @@ fetch('books.json')
     console.error('Error fetching book data:', error);
   });
 
-const bookDetailsContainer = document.getElementById('book-details-container');
-const bookDetails = document.getElementById('book-details');
-const closeButton = document.getElementById('close-button');
-
-closeButton.addEventListener('click', hideBookDetails);
-
 function showBookDetails(book) {
+  const bookDetailsContainer = document.createElement('div');
+  bookDetailsContainer.id = 'book-details-container';
+
+  const bookDetails = document.createElement('div');
+  bookDetails.id = 'book-details';
+
+  const closeButton = document.createElement('button');
+  closeButton.id = 'close-button';
+  closeButton.textContent = 'Close';
+
+  closeButton.addEventListener('click', () => {
+    hideBookDetails(bookDetailsContainer);
+  });
+
   bookDetails.innerHTML = `
     <h2>${book.bookTitle}</h2>
     <p>${book.authorName} ${book.authorSurname}</p>
     <p>${book.bookDescriptionLong}</p>
   `;
 
-  bookDetailsContainer.style.display = 'block';
+  bookDetailsContainer.appendChild(bookDetails);
+  bookDetailsContainer.appendChild(closeButton);
+
+  document.body.appendChild(bookDetailsContainer);
 }
 
-function hideBookDetails() {
-  bookDetails.innerHTML = '';
-  bookDetailsContainer.style.display = 'none';
+function hideBookDetails(container) {
+  document.body.removeChild(container);
 }

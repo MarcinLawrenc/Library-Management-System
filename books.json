@@ -6,7 +6,7 @@
       "authorSurname": "Author Surname 1",
       "bookDescription": "Short description of Book 1.",
       "bookDescriptionLong": "This is the long description of Book 1. It provides more detailed information about the book's plot, characters, and themes.",
-      "bookPhotoUrl": "https://example.com/bookphoto1.jpg",
+      "bookPhotoUrl": "bookPhotos/bookphoto1.jpg",
       "bookQuantity": 10,
       "booksBorrowedQuantity": 2,
       "booksReservedQuantity": 3
@@ -18,7 +18,7 @@
       "authorSurname": "Author Surname 2",
       "bookDescription": "Short description of Book 2.",
       "bookDescriptionLong": "This is the long description of Book 2. It provides more detailed information about the book's plot, characters, and themes.",
-      "bookPhotoUrl": "https://example.com/bookphoto2.jpg",
+      "bookPhotoUrl": "bookPhotos/bookphoto2.jpg",
       "bookQuantity": 5,
       "booksBorrowedQuantity": 1,
       "booksReservedQuantity": 2

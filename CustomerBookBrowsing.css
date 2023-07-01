@@ -1,35 +1,114 @@
+/* Global styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
   }
   
-  header {
-    background-color: #f2f2f2;
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
     padding: 20px;
   }
   
-  #book-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  h1 {
+    text-align: center;
   }
   
+  /* Book item styles */
+  
   .book-item {
+    position: relative;
+    display: inline-block;
     width: 200px;
+    height: 280px;
     margin: 10px;
     padding: 10px;
     border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  
+  .book-photo {
+    position: relative;
+    width: 100%;
+    max-height: 150px; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+  
+  .book-thumbnail {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
   
   .book-title {
+    font-size: 16px;
     font-weight: bold;
+    margin-bottom: 5px;
   }
   
   .book-author {
-    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
   }
   
-  .book-description {
-    margin-top: 10px;
+  /* Book details styles */
+  
+  #book-details {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    overflow-y: auto;
+  }
+  
+  .book-details-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .book-details-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .book-details-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .book-details-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+  }
+  
+  /* Close button styles when book details are expanded */
+  .book-item.expanded .close-button {
+    display: block;
   }

@@ -1,73 +1,70 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  h2 {
-    margin-top: 0;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-  }
-  
-  label {
-    margin-bottom: 5px;
-  }
-  
-  input,
-  select {
-    margin-bottom: 10px;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    padding: 5px 10px;
-    border-radius: 3px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .cancel-btn {
-    margin-left: 10px;
-    background-color: #ccc;
-  }
-  
-  #userTable {
-    margin-top: 20px;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  #userTable th,
-  #userTable td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #userTable th {
-    background-color: #f2f2f2;
-  }
-  
-  #message {
-    margin-top: 10px;
-    padding: 10px;
-    font-weight: bold;
-  }
-  
-  .success {
-    color: green;
-    background-color: #DFF2BF;
-  }
-  
-  .error {
-    color: red;
-    background-color: #FFBABA;
-  }
+  font-family: Arial, sans-serif;
+}
+
+#loginContainer, #userManagementContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+select {
+  padding: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.actions-cell button {
+  margin-right: 5px;
+}
+
+#editFormContainer {
+  margin-top: 20px;
+}
+
+#messageContainer {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.error {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.success {
+  background-color: #00cc00;
+  color: #fff;
+}

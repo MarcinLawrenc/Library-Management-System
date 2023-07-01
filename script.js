@@ -1,263 +1,196 @@
-// Login Form
-const loginForm = document.getElementById("loginForm");
-const loginEmailInput = document.getElementById("loginEmail");
-const loginPasswordInput = document.getElementById("loginPassword");
+let usersData = [];
 
-// User Form
-const userForm = document.getElementById("userForm");
-const userEmailInput = document.getElementById("userEmail");
-const userPasswordInput = document.getElementById("userPassword");
-const userNameInput = document.getElementById("userName");
-const userSurnameInput = document.getElementById("userSurname");
-const userTypeInput = document.getElementById("userType");
+// Function to display a message
+function displayMessage(type, message) {
+  const messageContainer = document.getElementById("messageContainer");
+  messageContainer.innerHTML = `<div class="${type}">${message}</div>`;
+  setTimeout(() => {
+    messageContainer.innerHTML = "";
+  }, 3000);
+}
 
-// User Table
-const userTable = document.getElementById("userTable");
-const userTableBody = userTable.querySelector("tbody");
+// Function to display the user table
+function displayUserTable() {
+  const tbody = document.querySelector("#userTable tbody");
+  tbody.innerHTML = "";
 
-// Edit Form
-const editFormContainer = document.getElementById("editFormContainer");
-const editEmailInput = document.getElementById("editEmail");
-const editPasswordInput = document.getElementById("editPassword");
-const editNameInput = document.getElementById("editName");
-const editSurnameInput = document.getElementById("editSurname");
-const editUserTypeInput = document.getElementById("editUserType");
+  usersData.forEach((user) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${user.email}</td>
+      <td>${user.password}</td>
+      <td>${user.name}</td>
+      <td>${user.surname}</td>
+      <td>${user.userType}</td>
+      <td class="actions-cell">
+        <button onclick="editUser('${user.email}')">Edit</button>
+        <button onclick="deleteUser('${user.email}')">Delete</button>
+      </td>
+    `;
+    tbody.appendChild(row);
+  });
+}
 
-// Message
-const messageDiv = document.getElementById("message");
+// Function to add a user
+function addUser() {
+  const emailInput = document.getElementById("userEmail");
+  const passwordInput = document.getElementById("userPassword");
+  const nameInput = document.getElementById("userName");
+  const surnameInput = document.getElementById("userSurname");
+  const userTypeInput = document.getElementById("userType");
 
-// Display login form initially
-loginForm.style.display = "block";
-userForm.style.display = "none";
-userTable.style.display = "none";
-editFormContainer.style.display = "none";
-messageDiv.style.display = "none";
-
-// Event listener for login form submission
-loginForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const email = loginEmailInput.value.trim();
-  const password = loginPasswordInput.value.trim();
-
-  // Check if the user is admin (dummy check, should be replaced with actual authentication logic)
-  if (email === "admin@example.com" && password === "admin123") {
-    displayUserManagement();
-  } else {
-    displayMessage("error", "Invalid credentials. Please try again.");
-  }
-});
-
-// Event listener for add user form submission
-userForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const email = userEmailInput.value.trim();
-  const password = userPasswordInput.value.trim();
-  const name = userNameInput.value.trim();
-  const surname = userSurnameInput.value.trim();
+  const email = emailInput.value;
+  const password = passwordInput.value;
+  const name = nameInput.value;
+  const surname = surnameInput.value;
   const userType = userTypeInput.value;
 
-  if (email && password && name && surname && userType) {
-    const newUser = {
-      email: email,
-      password: password,
-      name: name,
-      surname: surname,
-      userType: userType,
-    };
-
-    addUser(newUser);
-    displayUsers();
-    displayMessage("success", "User added successfully!");
-
-    // Reset the form inputs
-    userForm.reset();
-  } else {
-    displayMessage("error", "Please fill in all the fields.");
+  // Check if the email already exists
+  const existingUser = usersData.find((user) => user.email === email);
+  if (existingUser) {
+    displayMessage("error", "User with this email already exists.");
+    return;
   }
-});
 
-// Event listener for edit form submission
-editFormContainer.addEventListener("submit", function (e) {
-  e.preventDefault();
+  const newUser = {
+    email,
+    password,
+    name,
+    surname,
+    userType,
+  };
 
-  const email = editEmailInput.value.trim();
-  const password = editPasswordInput.value.trim();
-  const name = editNameInput.value.trim();
-  const surname = editSurnameInput.value.trim();
-  const userType = editUserTypeInput.value;
+  usersData.push(newUser);
 
-  if (email && password && name && surname && userType) {
-    const updatedUser = {
-      email: email,
-      password: password,
-      name: name,
-      surname: surname,
-      userType: userType,
-    };
+  // Save the updated user data to local storage
+  localStorage.setItem("usersData", JSON.stringify(usersData));
 
-    updateUser(updatedUser);
-    displayUsers();
-    displayMessage("success", "User updated successfully!");
+  displayMessage("success", "User added successfully!");
+  displayUserTable();
 
-    // Hide the edit form
-    hideEditForm();
-  } else {
-    displayMessage("error", "Please fill in all the fields.");
-  }
-});
-
-// Event listener for cancel button in add user and edit user forms
-const cancelButtons = document.querySelectorAll(".cancel-btn");
-cancelButtons.forEach(function (button) {
-  button.addEventListener("click", function () {
-    hideEditForm();
-  });
-});
-
-// Display the user management section
-function displayUserManagement() {
-  loginForm.style.display = "none";
-  userForm.style.display = "block";
-  userTable.style.display = "block";
-  displayUsers();
+  // Clear input fields
+  emailInput.value = "";
+  passwordInput.value = "";
+  nameInput.value = "";
+  surnameInput.value = "";
+  userTypeInput.value = "";
 }
 
-// Display the users in the table
-function displayUsers() {
-  userTableBody.innerHTML = "";
+// Function to edit a user
+function editUser(email) {
+  const editForm = document.getElementById("editForm");
+  const editEmailInput = document.getElementById("editEmail");
+  const editPasswordInput = document.getElementById("editPassword");
+  const editNameInput = document.getElementById("editName");
+  const editSurnameInput = document.getElementById("editSurname");
+  const editUserTypeInput = document.getElementById("editUserType");
 
-  const users = getUsersFromLocalStorage();
-  users.forEach(function (user) {
-    const row = document.createElement("tr");
+  const user = usersData.find((user) => user.email === email);
 
-    const emailCell = document.createElement("td");
-    emailCell.textContent = user.email;
-    row.appendChild(emailCell);
-
-    const passwordCell = document.createElement("td");
-    passwordCell.textContent = user.password;
-    row.appendChild(passwordCell);
-
-    const nameCell = document.createElement("td");
-    nameCell.textContent = user.name;
-    row.appendChild(nameCell);
-
-    const surnameCell = document.createElement("td");
-    surnameCell.textContent = user.surname;
-    row.appendChild(surnameCell);
-
-    const userTypeCell = document.createElement("td");
-    userTypeCell.textContent = user.userType;
-    row.appendChild(userTypeCell);
-
-    const actionsCell = document.createElement("td");
-    const editButton = document.createElement("button");
-    editButton.textContent = "Edit";
-    editButton.classList.add("edit-btn");
-    editButton.addEventListener("click", function () {
-      showEditForm(user);
-    });
-    actionsCell.appendChild(editButton);
-
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteButton.classList.add("delete-btn");
-    deleteButton.addEventListener("click", function () {
-      deleteUser(user.email);
-      displayUsers();
-      displayMessage("success", "User deleted successfully!");
-    });
-    actionsCell.appendChild(deleteButton);
-
-    row.appendChild(actionsCell);
-    userTableBody.appendChild(row);
-  });
-}
-
-// Show the edit form with pre-filled values
-function showEditForm(user) {
   editEmailInput.value = user.email;
   editPasswordInput.value = user.password;
   editNameInput.value = user.name;
   editSurnameInput.value = user.surname;
   editUserTypeInput.value = user.userType;
 
-  editFormContainer.style.display = "block";
+  document.getElementById("editFormContainer").style.display = "block";
+
+  editForm.onsubmit = function (e) {
+    e.preventDefault();
+
+    const updatedUser = {
+      email: editEmailInput.value,
+      password: editPasswordInput.value,
+      name: editNameInput.value,
+      surname: editSurnameInput.value,
+      userType: editUserTypeInput.value,
+    };
+
+    const index = usersData.findIndex((user) => user.email === email);
+    usersData[index] = updatedUser;
+
+    // Save the updated user data to local storage
+    localStorage.setItem("usersData", JSON.stringify(usersData));
+
+    displayMessage("success", "User updated successfully!");
+    displayUserTable();
+    closeEditForm();
+  };
 }
 
-// Hide the edit form
-function hideEditForm() {
-  editFormContainer.style.display = "none";
-  editEmailInput.value = "";
-  editPasswordInput.value = "";
-  editNameInput.value = "";
-  editSurnameInput.value = "";
-  editUserTypeInput.value = "";
+// Function to close the edit form
+function closeEditForm() {
+  document.getElementById("editFormContainer").style.display = "none";
+  document.getElementById("editForm").reset();
 }
 
-// Display a message
-function displayMessage(type, text) {
-  messageDiv.textContent = text;
-  messageDiv.className = `message ${type}`;
-  messageDiv.style.display = "block";
+// Function to delete a user
+function deleteUser(email) {
+  if (confirm("Are you sure you want to delete this user?")) {
+    usersData = usersData.filter((user) => user.email !== email);
 
-  // Hide the message after 3 seconds
-  setTimeout(function () {
-    messageDiv.style.display = "none";
-  }, 3000);
-}
+    // Save the updated user data to local storage
+    localStorage.setItem("usersData", JSON.stringify(usersData));
 
-// Local Storage Helper Functions
-
-// Get users from local storage
-function getUsersFromLocalStorage() {
-  let users = localStorage.getItem("users");
-  if (users) {
-    return JSON.parse(users);
-  } else {
-    return [];
+    displayMessage("success", "User deleted successfully!");
+    displayUserTable();
   }
 }
 
-// Add user to local storage
-function addUser(user) {
-  let users = getUsersFromLocalStorage();
-  users.push(user);
-  localStorage.setItem("users", JSON.stringify(users));
+// Function to log in
+function logIn() {
+  const loginEmailInput = document.getElementById("loginEmail");
+  const loginPasswordInput = document.getElementById("loginPassword");
+
+  const email = loginEmailInput.value;
+  const password = loginPasswordInput.value;
+
+  const adminUser = usersData.find((user) => user.email === email && user.userType === "admin");
+
+  if (adminUser && adminUser.password === password) {
+    document.getElementById("loginContainer").style.display = "none";
+    document.getElementById("userManagementContainer").style.display = "block";
+    displayUserTable();
+  } else {
+    displayMessage("error", "Invalid email or password.");
+  }
+
+  loginEmailInput.value = "";
+  loginPasswordInput.value = "";
 }
 
-// Update user in local storage
-function updateUser(updatedUser) {
-  let users = getUsersFromLocalStorage();
-  let updatedUsers = users.map(function (user) {
-    if (user.email === updatedUser.email) {
-      return updatedUser;
-    } else {
-      return user;
-    }
-  });
-  localStorage.setItem("users", JSON.stringify(updatedUsers));
-}
+// Retrieve user data from local storage or set it to an empty array if it doesn't exist
+usersData = JSON.parse(localStorage.getItem("usersData")) || [];
 
-// Delete user from local storage
-function deleteUser(email) {
-  let users = getUsersFromLocalStorage();
-  let updatedUsers = users.filter(function (user) {
-    return user.email !== email;
-  });
-  localStorage.setItem("users", JSON.stringify(updatedUsers));
-}
-
-// Call the displayUsers function to initially load and display the users from local storage
-window.addEventListener("DOMContentLoaded", function () {
+// Check if any users exist in local storage
+if (usersData.length > 0) {
+  const adminUser = usersData.find((user) => user.userType === "admin");
+  if (adminUser) {
+    document.getElementById("loginContainer").style.display = "block";
+  }
+} else {
+  // Fetch user data from users.json and save it to local storage
   fetch("users.json")
     .then((response) => response.json())
     .then((data) => {
-      localStorage.setItem("users", JSON.stringify(data));
-      displayUsers();
+      usersData = data;
+      localStorage.setItem("usersData", JSON.stringify(usersData));
+      const adminUser = usersData.find((user) => user.userType === "admin");
+      if (adminUser) {
+        document.getElementById("loginContainer").style.display = "block";
+      }
     })
-    .catch((error) => {
-      console.error("Error fetching user data from users.json:", error);
-    });
+    .catch((error) => console.log(error));
+}
+
+// Handle form submission event for login
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  logIn();
+});
+
+// Handle form submission event for adding a user
+document.getElementById("addUserForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  addUser();
 });

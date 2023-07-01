@@ -1,30 +1,59 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
 
-h1, h2 {
-  margin-top: 20px;
-}
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
 
-#loginForm, #userForm, #userList {
-  margin-top: 20px;
-}
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-input, button {
-  margin-top: 10px;
-}
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+  label {
+    margin-bottom: 5px;
+  }
 
-li {
-  margin-bottom: 5px;
-}
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
 
-#userForm button, #userList button {
-  margin-right: 10px;
-}
+  button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .error {
+    color: red;
+    margin-top: 10px;
+  }

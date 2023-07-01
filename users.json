@@ -1,16 +1,25 @@
-{
-  "users": [
-    {
-      "name": "John",
-      "surname": "Doe",
-      "email": "john.doe@example.com",
-      "password": "password123"
-    },
-    {
-      "name": "Jane",
-      "surname": "Smith",
-      "email": "jane.smith@example.com",
-      "password": "password456"
-    }
-  ]
-}
+[
+  {
+    "name": "John",
+    "surname": "Doe",
+    "email": "john@example.com",
+    "password": "password123",
+    "userType": "admin"
+  },
+  {
+    "name": "Jane",
+    "surname": "Smith",
+    "email": "jane@example.com",
+    "password": "password456",
+    "userType": "librarian"
+  },
+  {
+    "name": "Michael",
+    "surname": "Johnson",
+    "email": "michael@example.com",
+    "password": "password789",
+    "userType": "reader"
+  }
+]
+
+

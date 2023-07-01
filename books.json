@@ -30,7 +30,7 @@
       "authorSurname": "Author Surname 3",
       "bookDescription": "Short description of Book 3.",
       "bookDescriptionLong": "This is the long description of Book 3. It provides more detailed information about the book's plot, characters, and themes.",
-      "bookPhotoUrl": "https://example.com/bookphoto3.jpg",
+      "bookPhotoUrl": "bookPhotos/bookphoto3.jpg",
       "bookQuantity": 8,
       "booksBorrowedQuantity": 0,
       "booksReservedQuantity": 4
@@ -42,7 +42,7 @@
       "authorSurname": "Author Surname 4",
       "bookDescription": "Short description of Book 4.",
       "bookDescriptionLong": "This is the long description of Book 4. It provides more detailed information about the book's plot, characters, and themes.",
-      "bookPhotoUrl": "https://example.com/bookphoto4.jpg",
+      "bookPhotoUrl": "bookPhotos/bookphoto4.jpg",
       "bookQuantity": 3,
       "booksBorrowedQuantity": 1,
       "booksReservedQuantity": 1
@@ -54,7 +54,7 @@
       "authorSurname": "Author Surname 5",
       "bookDescription": "Short description of Book 5.",
       "bookDescriptionLong": "This is the long description of Book 5. It provides more detailed information about the book's plot, characters, and themes.",
-      "bookPhotoUrl": "https://example.com/bookphoto5.jpg",
+      "bookPhotoUrl": "bookPhotos/bookphoto5.jpg",
       "bookQuantity": 12,
       "booksBorrowedQuantity": 3,
       "booksReservedQuantity": 2

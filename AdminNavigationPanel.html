@@ -1,30 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+  <title>Navigation Example</title>
+  <style>
+    /* Styles for navigation */
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
 
-    <head>
-        <title>DaVinciLibraryLogin</title>
-        <link rel="stylesheet" href="LoginFormStyle.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-    </head>
+    li {
+      float: left;
+    }
 
-    <body>
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
 
-        <div class="main">
+    li a:hover {
+      background-color: #111;
+    }
 
-            <div class="navbar">
-                <div class="icon">
-                    <h2 class="logo">DaVinciLibrary</h2>
-                </div>
+    /* Styles for responsive divs */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 20px;
+      margin: 20px;
+    }
 
-            </div>
-            <div class="content">
-                
-            </div>
-            
-        </div>
+    .photo-grid-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
 
-        <script src="LoginFormScript.js"></script>
+    .photo-grid-item img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <ul>
+    <li><a href="AdminAddDeleteUsersPanel.html">Admin Add/Delete Users Panel</a></li>
+    <li><a href="AdminLibrarianAddDeleteBooksPanel.html">Admin Librarian Add/Delete Books Panel</a></li>
+    <li><a href="CustomerBookBrowsing.html">Customer Book Browsing</a></li>
+    <li><a href="CustomerLoginForm.html">Customer Login Form</a></li>
+  </ul>
 
-    </body>
+  <!-- Photo Grid -->
+  <div class="photo-grid">
+    <div class="photo-grid-item">
+      <img src="https://via.placeholder.com/300" alt="Photo 1">
+    </div>
+    <div class="photo-grid-item">
+      <img src="https://via.placeholder.com/300" alt="Photo 2">
+    </div>
+    <div class="photo-grid-item">
+      <img src="https://via.placeholder.com/300" alt="Photo 3">
+    </div>
+  </div>
+</body>
 </html>

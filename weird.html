@@ -37,8 +37,10 @@
       <input type="text" id="bookTitle" placeholder="Book Title" required>
       <input type="text" id="authorName" placeholder="Author Name" required>
       <input type="text" id="authorSurname" placeholder="Author Surname" required>
-      <textarea id="bookDescription" placeholder="Book Description" required></textarea>
-      <textarea id="bookDescriptionLong" placeholder="Book Description (Long)" required></textarea>
+      <input type="text" id="bookDescription" placeholder="Book Description" required>
+      <input type="text" id="bookDescriptionLong" placeholder="Book Description (Long)" required>
+      <input type="text" id="bookQuantity" placeholder="Book Quantity" required>
+      <input type="text" id="bookGenre" placeholder="Book Genre" required>
       </select>
       <button type="submit">Add Book</button>
     </form>
@@ -51,6 +53,8 @@
           <th>Author</th>
           <th>Description</th>
           <th>Description (Long)</th>
+          <th>Quantity</th>
+          <th>Genre</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -63,7 +67,12 @@
     <form id="editBookForm">
       <input type="hidden" id="editBookId">
       <input type="text" id="editBookTitle" placeholder="Book Title" required>
+      <input type="text" id="editAuthorName" placeholder="Author Name" required>
       <input type="text" id="editAuthorSurname" placeholder="Author Surname" required>
+      <input type="text" id="editBookDescription" placeholder="Book Description" required>
+      <input type="text" id="editBookDescriptionLong" placeholder="Book Description (Long)" required>
+      <input type="text" id="editBookQuantity" placeholder="Book Quantity" required>
+      <input type="text" id="editBookGenre" placeholder="Book Genre" required>
       <button type="submit">Submit</button>
       <button type="button" onclick="closeEditForm()">Cancel</button>
     </form>
@@ -100,6 +109,8 @@
           <td>${book.authorName} ${book.authorSurname}</td>
           <td>${book.bookDescription}</td>
           <td>${book.bookDescriptionLong}</td>
+          <td>${book.bookQuantity}</td>
+          <td>${book.bookGenre}</td>
           <td>
             <button onclick="editBook('${book.bookID}')">Edit</button>
             <button onclick="deleteBook('${book.bookID}')">Delete</button>
@@ -119,6 +130,9 @@
       const authorSurname = document.getElementById('authorSurname').value;
       const bookDescription = document.getElementById('bookDescription').value;
       const bookDescriptionLong = document.getElementById('bookDescriptionLong').value;
+      const bookQuantity = document.getElementById('bookQuantity').value;
+      const bookGenre = document.getElementById('bookGenre').value;
+
 
       const existingBook = booksData.find((book) => book.authorSurname === authorSurname && book.bookTitle === bookTitle);
       if (existingBook) {
@@ -131,6 +145,8 @@
           authorSurname,
           bookDescription,
           bookDescriptionLong,
+          bookQuantity,
+          bookGenre
         };
 
         booksData.push(newBook);

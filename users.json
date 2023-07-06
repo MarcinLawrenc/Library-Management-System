@@ -1,5 +1,6 @@
 [
   {
+    "UserId": "1",
     "email": "admin@example.com",
     "password": "admin1",
     "name": "Admin",
@@ -7,6 +8,7 @@
     "userType": "admin"
   },
   {
+    "UserId": "2",
     "email": "librarian@example.com",
     "password": "librarian123",
     "name": "Librarian",
@@ -14,6 +16,7 @@
     "userType": "librarian"
   },
   {
+    "UserId": "3",
     "email": "reader@example.com",
     "password": "reader123",
     "name": "Reader",

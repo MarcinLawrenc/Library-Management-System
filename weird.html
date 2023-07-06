@@ -3,6 +3,16 @@
 <head>
   <title>Book Management</title>
   <style>
+    #loginForm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
     .message {
       padding: 10px;
       margin-bottom: 10px;
@@ -39,7 +49,7 @@
       <input type="text" id="authorSurname" placeholder="Author Surname" required>
       <input type="text" id="bookDescription" placeholder="Book Description" required>
       <input type="text" id="bookDescriptionLong" placeholder="Book Description (Long)" required>
-      <input type="text" id="bookQuantity" placeholder="Book Quantity" required>
+      <input type="number" id="bookQuantity" placeholder="Book Quantity" required>
       <input type="text" id="bookGenre" placeholder="Book Genre" required>
       </select>
       <button type="submit">Add Book</button>
@@ -71,7 +81,7 @@
       <input type="text" id="editAuthorSurname" placeholder="Author Surname" required>
       <input type="text" id="editBookDescription" placeholder="Book Description" required>
       <input type="text" id="editBookDescriptionLong" placeholder="Book Description (Long)" required>
-      <input type="text" id="editBookQuantity" placeholder="Book Quantity" required>
+      <input type="number" id="editBookQuantity" placeholder="Book Quantity" required>
       <input type="text" id="editBookGenre" placeholder="Book Genre" required>
       <button type="submit">Submit</button>
       <button type="button" onclick="closeEditForm()">Cancel</button>

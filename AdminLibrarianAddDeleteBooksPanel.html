@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin/Librarian - Add/Delete Books Panel</title>
+  <link rel="stylesheet" href="AdminLibrarianAddDeleteBooksPanel.css">
+</head>
+
+<body>
+  <div id="loginContainer">
+    <h1>Admin/Librarian Login</h1>
+    <form id="loginForm">
+      <label for="loginEmail">Email:</label>
+      <input type="email" id="loginEmail" required>
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" required>
+      <button type="submit">Log In</button>
+    </form>
+  </div>
+
+  <div id="bookManagementContainer" style="display: none;">
+    <h1>Book Management</h1>
+    <div id="messageContainer"></div>
+
+    <h2>Add Book</h2>
+    <form id="addBookForm">
+      <label for="bookID">Book ID:</label>
+      <input type="text" id="bookID" required>
+      <label for="bookTitle">Title:</label>
+      <input type="text" id="bookTitle" required>
+      <label for="authorName">Author Name:</label>
+      <input type="text" id="authorName" required>
+      <label for="authorSurname">Author Surname:</label>
+      <input type="text" id="authorSurname" required>
+      <label for="bookDescription">Description:</label>
+      <textarea id="bookDescription" required></textarea>
+      <label for="bookDescriptionLong">Long Description:</label>
+      <textarea id="bookDescriptionLong" required></textarea>
+      <label for="bookPhotoUrl">Photo URL:</label>
+      <input type="text" id="bookPhotoUrl" required>
+      <label for="bookQuantity">Quantity:</label>
+      <input type="number" id="bookQuantity" required>
+      <label for="bookGenre">Genre:</label>
+      <input type="text" id="bookGenre" required>
+      <button type="submit">Add Book</button>
+    </form>
+
+    <h2>Books</h2>
+    <table id="bookTable">
+      <thead>
+        <tr>
+          <th>Book ID</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Borrowed</th>
+          <th>Reserved</th>
+          <th>Genre</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div id="editFormContainer" style="display: none;">
+      <h2>Edit Book</h2>
+      <form id="editForm">
+        <input type="hidden" id="editBookID">
+        <label for="editBookTitle">Title:</label>
+        <input type="text" id="editBookTitle" required>
+        <label for="editAuthorName">Author Name:</label>
+        <input type="text" id="editAuthorName" required>
+        <label for="editAuthorSurname">Author Surname:</label>
+        <input type="text" id="editAuthorSurname" required>
+        <label for="editBookDescription">Description:</label>
+        <textarea id="editBookDescription" required></textarea>
+        <label for="editBookDescriptionLong">Long Description:</label>
+        <textarea id="editBookDescriptionLong" required></textarea>
+        <label for="editBookPhotoUrl">Photo URL:</label>
+        <input type="text" id="editBookPhotoUrl" required>
+        <label for="editBookQuantity">Quantity:</label>
+        <input type="number" id="editBookQuantity" required>
+        <label for="editBookGenre">Genre:</label>
+        <input type="text" id="editBookGenre" required>
+        <button type="submit">Save Changes</button>
+        <button type="button" id="cancelEditButton">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="AdminLibrarianAddDeleteBooksPanel.js"></script>
+</body>
+
+</html>

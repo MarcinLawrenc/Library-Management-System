@@ -39,9 +39,6 @@
       <input type="text" id="authorSurname" placeholder="Author Surname" required>
       <textarea id="bookDescription" placeholder="Book Description" required></textarea>
       <textarea id="bookDescriptionLong" placeholder="Book Description (Long)" required></textarea>
-      <select id="userType" required>
-        <option value="admin">Admin</option>
-        <option value="librarian">Librarian</option>
       </select>
       <button type="submit">Add Book</button>
     </form>
@@ -103,7 +100,6 @@
           <td>${book.authorName} ${book.authorSurname}</td>
           <td>${book.bookDescription}</td>
           <td>${book.bookDescriptionLong}</td>
-          <td>${book.userType}</td>
           <td>
             <button onclick="editBook('${book.bookID}')">Edit</button>
             <button onclick="deleteBook('${book.bookID}')">Delete</button>

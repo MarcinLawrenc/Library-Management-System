@@ -63,5 +63,57 @@
     "booksBorrowedQuantity": 3,
     "booksReservedQuantity": 2,
     "bookGenre": "Genre 5"
+  },
+  {
+    "bookID": "00006",
+    "bookTitle": "Book Title 6",
+    "authorName": "Author Name 6",
+    "authorSurname": "Author Surname 6",
+    "bookDescription": "Short description of Book 6.",
+    "bookDescriptionLong": "This is the long description of Book 6. It provides more detailed information about the book's plot, characters, and themes.",
+    "bookPhotoUrl": "bookPhotos/bookphoto6.jpg",
+    "bookQuantity": 1,
+    "booksBorrowedQuantity": 0,
+    "booksReservedQuantity": 0,
+    "bookGenre": "Genre 6"
+  },
+  {
+    "bookID": "00007",
+    "bookTitle": "Book Title 7",
+    "authorName": "Author Name 7",
+    "authorSurname": "Author Surname 7",
+    "bookDescription": "Short description of Book 7.",
+    "bookDescriptionLong": "This is the long description of Book 7. It provides more detailed information about the book's plot, characters, and themes.",
+    "bookPhotoUrl": "bookPhotos/bookphoto7.jpg",
+    "bookQuantity": 5,
+    "booksBorrowedQuantity": 2,
+    "booksReservedQuantity": 1,
+    "bookGenre": "Genre 7"
+  },
+  {
+    "bookID": "00008",
+    "bookTitle": "Book Title 8",
+    "authorName": "Author Name 8",
+    "authorSurname": "Author Surname 8",
+    "bookDescription": "Short description of Book 8.",
+    "bookDescriptionLong": "This is the long description of Book 8. It provides more detailed information about the book's plot, characters, and themes.",
+    "bookPhotoUrl": "bookPhotos/bookphoto8.jpg",
+    "bookQuantity": 20,
+    "booksBorrowedQuantity": 5,
+    "booksReservedQuantity": 8,
+    "bookGenre": "Genre 8"
+  },
+  {
+    "bookID": "00009",
+    "bookTitle": "Book Title 9",
+    "authorName": "Author Name 9",
+    "authorSurname": "Author Surname 9",
+    "bookDescription": "Short description of Book 9.",
+    "bookDescriptionLong": "This is the long description of Book 9. It provides more detailed information about the book's plot, characters, and themes.",
+    "bookPhotoUrl": "bookPhotos/bookphoto9.jpg",
+    "bookQuantity": 18,
+    "booksBorrowedQuantity": 4,
+    "booksReservedQuantity": 6,
+    "bookGenre": "Genre 9"
   }
 ]

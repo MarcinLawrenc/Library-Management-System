@@ -10,7 +10,7 @@ h1 {
 
 #book-list {
   display: grid;
-  max-width: 600px;
+  max-width: 1200px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap:20px;
 

@@ -199,11 +199,21 @@ body {
     border-radius: 5px;
 }
 
-#editFormContainer button {
+.btn-save{
     padding: 10px;
     border: none;
     border-radius: 5px;
     color: #F6F9FA;
     background-color: #5ACA75;
     cursor: pointer;
+    margin: 0 0 10px 0;
 }
+
+/* #editFormContainer button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #5ACA75;
+    cursor: pointer;
+} */

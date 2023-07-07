@@ -10,85 +10,62 @@
 
 <body>
   <div id="loginContainer">
-    <h1>Admin/Librarian Login</h1>
+    <h2>Login</h2>
     <form id="loginForm">
-      <label for="loginEmail">Email:</label>
-      <input type="email" id="loginEmail" required>
-      <label for="loginPassword">Password:</label>
-      <input type="password" id="loginPassword" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
       <button type="submit">Log In</button>
     </form>
+    <div id="messageContainer"></div>
   </div>
 
-  <div id="bookManagementContainer" style="display: none;">
-    <h1>Book Management</h1>
-    <div id="messageContainer"></div>
-
-    <h2>Add Book</h2>
+  <div id="booksContainer" style="display: none;">
+    <h2>Books Management</h2>
     <form id="addBookForm">
-      <label for="bookID">Book ID:</label>
-      <input type="text" id="bookID" required>
-      <label for="bookTitle">Title:</label>
-      <input type="text" id="bookTitle" required>
-      <label for="authorName">Author Name:</label>
-      <input type="text" id="authorName" required>
-      <label for="authorSurname">Author Surname:</label>
-      <input type="text" id="authorSurname" required>
-      <label for="bookDescription">Description:</label>
-      <textarea id="bookDescription" required></textarea>
-      <label for="bookDescriptionLong">Long Description:</label>
-      <textarea id="bookDescriptionLong" required></textarea>
-      <label for="bookPhotoUrl">Photo URL:</label>
-      <input type="text" id="bookPhotoUrl" required>
-      <label for="bookQuantity">Quantity:</label>
-      <input type="number" id="bookQuantity" required>
-      <label for="bookGenre">Genre:</label>
-      <input type="text" id="bookGenre" required>
+      <input type="text" id="bookID" placeholder="Book ID" required>
+      <input type="text" id="bookTitle" placeholder="Book Title" required>
+      <input type="text" id="authorName" placeholder="Author Name" required>
+      <input type="text" id="authorSurname" placeholder="Author Surname" required>
+      <input type="text" id="bookDescription" placeholder="Book Description" required>
+      <input type="text" id="bookDescriptionLong" placeholder="Book Description (Long)" required>
+      <input type="number" id="bookQuantity" placeholder="Book Quantity" required>
+      <input type="text" id="bookGenre" placeholder="Book Genre" required>
+      </select>
       <button type="submit">Add Book</button>
     </form>
-
-    <h2>Books</h2>
-    <table id="bookTable">
+    <div id="messageContainer"></div>
+    <table id="booksTable">
       <thead>
         <tr>
-          <th>Book ID</th>
+          <th>ID</th>
           <th>Title</th>
           <th>Author</th>
           <th>Description</th>
+          <th>Description (Long)</th>
           <th>Quantity</th>
-          <th>Borrowed</th>
-          <th>Reserved</th>
           <th>Genre</th>
-          <th>Actions</th>
+          <th>Action</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody id="booksTableBody"></tbody>
     </table>
+  </div>
 
-    <div id="editFormContainer" style="display: none;">
-      <h2>Edit Book</h2>
-      <form id="editForm">
-        <input type="hidden" id="editBookID">
-        <label for="editBookTitle">Title:</label>
-        <input type="text" id="editBookTitle" required>
-        <label for="editAuthorName">Author Name:</label>
-        <input type="text" id="editAuthorName" required>
-        <label for="editAuthorSurname">Author Surname:</label>
-        <input type="text" id="editAuthorSurname" required>
-        <label for="editBookDescription">Description:</label>
-        <textarea id="editBookDescription" required></textarea>
-        <label for="editBookDescriptionLong">Long Description:</label>
-        <textarea id="editBookDescriptionLong" required></textarea>
-        <label for="editBookPhotoUrl">Photo URL:</label>
-        <input type="text" id="editBookPhotoUrl" required>
-        <label for="editBookQuantity">Quantity:</label>
-        <input type="number" id="editBookQuantity" required>
-        <label for="editBookGenre">Genre:</label>
-        <input type="text" id="editBookGenre" required>
-        <button type="submit">Save Changes</button>
-        <button type="button" id="cancelEditButton">Cancel</button>
-      </form>
-    </div>
+  <div id="editFormContainer" style="display: none;">
+    <h2>Edit Book</h2>
+    <form id="editBookForm">
+      <input type="hidden" id="editBookId">
+      <input type="text" id="editBookID" placeholder="Book ID" required>
+      <input type="text" id="editBookTitle" placeholder="Book Title" required>
+      <input type="text" id="editAuthorName" placeholder="Author Name" required>
+      <input type="text" id="editAuthorSurname" placeholder="Author Surname" required>
+      <input type="text" id="editBookDescription" placeholder="Book Description" required>
+      <input type="text" id="editBookDescriptionLong" placeholder="Book Description (Long)" required>
+      <input type="number" id="editBookQuantity" placeholder="Book Quantity" required>
+      <input type="text" id="editBookGenre" placeholder="Book Genre" required>
+      <button type="submit">Submit</button>
+      <button type="button" onclick="closeEditForm()">Cancel</button>
+    </form>
   </div>
 
   <script src="AdminLibrarianAddDeleteBooksPanel.js"></script>

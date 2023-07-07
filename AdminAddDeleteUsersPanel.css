@@ -11,6 +11,20 @@ body {
     padding: 0;
 }
 
+/* Message Container */
+
+.error{
+    background-color: #FE7E7E;
+    padding: 30px;
+    border-left: 10px red solid;
+}
+
+.success{
+    background-color: #5ACA75;
+    padding: 30px;
+    border-left: 10px green solid;
+}
+
 /* login container */
 #loginContainer {
     background-color: #004D67;

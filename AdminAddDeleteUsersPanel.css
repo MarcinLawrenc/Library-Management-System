@@ -14,8 +14,8 @@ body {
 /* login container */
 #loginContainer {
     background-color: #004D67;
-    width: 90%;
-    max-width: 500px;
+    width: 80%;
+    max-width: 300px;
     padding: 20px;
     border-radius: 10px;
     color: #D9D9D9;
@@ -30,6 +30,8 @@ body {
 
 #loginContainer input[type="email"],
 #loginContainer input[type="password"] {
+    box-sizing: border-box;
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: none;
@@ -43,6 +45,8 @@ body {
     color: #F6F9FA;
     background-color: #00B6DC;
     cursor: pointer;
+    width: 100%;
+    margin: 5px 0 0 0;
 }
 
 /* User Management Container */
@@ -52,6 +56,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    min-height: 100vh;
 }
 
 #userManagementContainer h1 {
@@ -65,6 +70,7 @@ body {
 #userManagementContainer form {
     display: flex;
     flex-direction: column;
+    padding: 0 0 20px 0;
 }
 
 #userManagementContainer input[type="email"],
@@ -77,13 +83,62 @@ body {
     border-radius: 5px;
 }
 
-#userManagementContainer button {
+
+.btn-addUser{
     padding: 10px;
     border: none;
     border-radius: 5px;
     color: #F6F9FA;
     background-color: #5ACA75;
     cursor: pointer;
+}
+
+.btn-edit{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #00B6DC;
+    cursor: pointer;
+}
+
+.btn-del{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #FE7E7E;
+    cursor: pointer;
+}
+
+#userManagementContainer .table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#userManagementContainer table {
+    min-width: 300px;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    #userManagementContainer table thead {
+        display: none;
+    }
+
+    #userManagementContainer table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #D9D9D9;
+    }
+
+    #userManagementContainer table td {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        border: none;
+    }
 }
 
 #userManagementContainer table {

@@ -19,6 +19,18 @@ li a {
   text-decoration: none;
 }
 
+.shopping img{
+  width: 20px;
+  position: relative;
+  text-align: right;
+  padding: 3px;
+  margin-top: 5px;
+}
+
+.quantity {
+  color: white;
+}
+
 #LiAAdminNavigationPanel:hover, li a:hover {
   color: rgb(0, 238, 255);
 }

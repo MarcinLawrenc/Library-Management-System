@@ -96,6 +96,16 @@ body {
     color: #FFA32C;
 }
 
+@media screen and (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+    .navbar ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
 /* Book Management Container */
 #booksContainer {
     width: 90%;
@@ -124,18 +134,9 @@ body {
     border-radius: 5px;
 }
 
-#booksContainer button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: #F6F9FA;
-    background-color: #5ACA75;
-    cursor: pointer;
-}
 
 #booksContainer .table-container {
     width: 100%;
-    overflow-x: auto;
 }
 
 #booksContainer table {
@@ -156,6 +157,72 @@ body {
 #booksContainer table tr:nth-child(odd) {
     background-color: #F5D665;
 }
+
+.btn-addBook{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #5ACA75;
+    cursor: pointer;
+}
+
+.btn-edit{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #00B6DC;
+    cursor: pointer;
+}
+
+.btn-del{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #FE7E7E;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    #booksContainer table thead {
+        display: none;
+    }
+
+    #booksContainer table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #D9D9D9;
+    }
+
+    #booksContainer table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border: none;
+    }
+
+    #editFormContainer table thead {
+        display: none;
+    }
+
+    #editFormContainer table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #D9D9D9;
+    }
+
+    #editFormContainer table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border: none;
+    }
+}
+
 
 /* Edit Form Container */
 
@@ -179,13 +246,4 @@ body {
     margin: 10px 0;
     border: 2px solid #68D7EE;
     border-radius: 5px;
-}
-
-#editFormContainer button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: #F6F9FA;
-    background-color: #5ACA75;
-    cursor: pointer;
 }

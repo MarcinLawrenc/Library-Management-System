@@ -32,8 +32,8 @@ function displayBooksTable() {
       <td>${book.bookQuantity}</td>
       <td>${book.bookGenre}</td>
       <td>
-        <button onclick="editBook('${book.bookID}')">Edit</button>
-        <button onclick="deleteBook('${book.bookID}')">Delete</button>
+        <button class="btn-edit" onclick="editBook('${book.bookID}')">Edit</button>
+        <button class="btn-del" onclick="deleteBook('${book.bookID}')">Delete</button>
       </td>
     `;
     booksTableBody.appendChild(row);

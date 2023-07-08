@@ -1,8 +1,12 @@
+// Initialize empty array for reserved books data
+let booksCartData = [];
+
+
 // Fetch data from books.json
 fetch('books.json')
-  .then(response => response.json())
-  .then(data => {
-    const bookList = document.getElementById('book-list');
+.then(response => response.json())
+.then(data => {
+  const bookList = document.getElementById('book-list');
 
     // Iterate over the books data
     data.forEach(book => {
@@ -22,11 +26,18 @@ fetch('books.json')
       const bookAuthor = document.createElement('p');
       bookAuthor.textContent = `${book.authorName} ${book.authorSurname}`;
 
+      const reserveButton = document.createElement("button");
+      reserveButton.innerHTML = "Reserve Book";
+      reserveButton.addEventListener('click', () => {
+        addBookToCart(book);
+      });
+
       bookInfo.addEventListener('click', () => {
         showBookDetails(book);
       });
 
       bookItem.appendChild(bookInfo)
+      bookItem.appendChild(reserveButton)
 
       bookInfo.appendChild(bookThumbnail);
       bookInfo.appendChild(bookTitle);
@@ -38,6 +49,11 @@ fetch('books.json')
   .catch(error => {
     console.error('Error fetching book data:', error);
   });
+
+function addBookToCart(book) {
+  booksCartData.push(book);
+  localStorage.setItem('booksCartData', JSON.stringify(booksCartData));
+}
 
 function showBookDetails(book) {
   const bookDetailsContainer = document.createElement('div');
@@ -66,6 +82,8 @@ function showBookDetails(book) {
   document.body.appendChild(bookDetailsContainer);
 }
 
+
 function hideBookDetails(container) {
   document.body.removeChild(container);
 }
+

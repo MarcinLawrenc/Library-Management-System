@@ -12,6 +12,12 @@ fetch('books.json')
       const bookItem = document.createElement('div');
       bookItem.classList.add('book-item');
 
+    // Adding Event Listener to the book item
+    bookItem.addEventListener('click', () => {
+        addToHistory(book); // adding book to the history
+        displayHistory(); // display the history
+    });
+
       const bookInfo = document.createElement('div');
       bookInfo.classList.add('book-info');
 
@@ -45,6 +51,8 @@ fetch('books.json')
       bookList.appendChild(bookItem);
     });
   })
+
+  
   .catch(error => {
     console.error('Error fetching book data:', error);
   });
@@ -167,3 +175,45 @@ function deleteBook(bookID) {
 }
 
 
+
+const historyPanel = document.getElementById('history-panel');
+const historyToggle = document.getElementById('history-toggle');
+
+// Add a click event listener to the toggle button
+historyToggle.addEventListener('click', function() {
+    historyPanel.classList.toggle('active');
+});
+
+
+// Function to add a book to the history
+function addToHistory(book) {
+    let history = JSON.parse(localStorage.getItem('viewHistory')) || [];
+
+    history.push(book);
+
+    localStorage.setItem('viewHistory', JSON.stringify(history));
+}
+
+// Function to display the view history in the history panel
+function displayHistory() {
+
+    historyPanel.innerHTML = '';
+
+    let history = JSON.parse(localStorage.getItem('viewHistory')) || [];
+
+    history.forEach(book => {
+        const bookDiv = document.createElement('div');
+        bookDiv.classList.add('history-item');
+
+        const bookTitle = document.createElement('h2');
+        bookTitle.textContent = book.bookTitle;
+
+        const bookAuthor = document.createElement('p');
+        bookAuthor.textContent = `${book.authorName} ${book.authorSurname}`;
+
+        bookDiv.appendChild(bookTitle);
+        bookDiv.appendChild(bookAuthor);
+
+        historyPanel.appendChild(bookDiv);
+    });
+}

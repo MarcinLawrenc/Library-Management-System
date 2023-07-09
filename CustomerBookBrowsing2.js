@@ -72,7 +72,9 @@ function showBookDetails(book) {
   `;
 
 
-
+  bookDetailsContainer.appendChild(bookDetails);
+  bookDetailsContainer.appendChild(closeButton);
+  
   document.body.appendChild(bookDetailsContainer);
 }
 

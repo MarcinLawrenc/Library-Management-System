@@ -17,10 +17,34 @@
   },
   {
     "UserId": "3",
+    "email": "reader3@example.com",
+    "password": "reader123",
+    "name": "Reader3",
+    "surname": "User3",
+    "userType": "reader"
+  },
+  {
+    "UserId": "4",
+    "email": "reader4@example.com",
+    "password": "reader123",
+    "name": "Reader4",
+    "surname": "User4",
+    "userType": "reader"
+  },
+  {
+    "UserId": "5",
+    "email": "reader5@example.com",
+    "password": "reader123",
+    "name": "Reader5",
+    "surname": "User5",
+    "userType": "reader"
+  },
+  {
+    "UserId": "6",
     "email": "reader@example.com",
     "password": "reader123",
-    "name": "Reader",
-    "surname": "User",
+    "name": "Reader6",
+    "surname": "User6",
     "userType": "reader"
   }
 ]

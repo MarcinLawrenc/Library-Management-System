@@ -1,0 +1,30 @@
+[
+    {
+    "borrowID": "1",
+    "bookID": "00001",
+    "UserId": "1",
+    "bookTitle": "Book Title 1",
+    "email": "admin@example.com",
+    "name": "Admin",
+    "surname": "User",
+    "authorName": "Author Name 1",
+    "authorSurname": "Author Surname 1",
+    "bookQuantity": 10,
+    "booksBorrowedQuantity": 2,
+    "booksReservedQuantity": 3
+  },
+  {
+    "borrowID": "2",
+    "bookID": "00002",
+    "UserId": "2",
+    "bookTitle": "Book Title 2",
+    "email": "user@example.com",
+    "name": "John",
+    "surname": "Doe",
+    "authorName": "Author Name 2",
+    "authorSurname": "Author Surname 2",
+    "bookQuantity": 5,
+    "booksBorrowedQuantity": 1,
+    "booksReservedQuantity": 2
+  }
+]

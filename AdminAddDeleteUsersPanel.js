@@ -23,8 +23,8 @@ function displayUserTable() {
       <td>${user.surname}</td>
       <td>${user.userType}</td>
       <td class="actions-cell">
-        <button onclick="editUser('${user.email}')">Edit</button>
-        <button onclick="deleteUser('${user.email}')">Delete</button>
+        <button class="btn-edit" onclick="editUser('${user.email}')">Edit</button>
+        <button class="btn-del" onclick="deleteUser('${user.email}')">Delete</button>
       </td>
     `;
     tbody.appendChild(row);
@@ -93,7 +93,7 @@ function editUser(email) {
   editSurnameInput.value = user.surname;
   editUserTypeInput.value = user.userType;
 
-  document.getElementById("editFormContainer").style.display = "block";
+  document.getElementById("editFormContainer").style.display = "flex";
 
   editForm.onsubmit = function (e) {
     e.preventDefault();
@@ -149,7 +149,7 @@ function logIn() {
 
   if (adminUser && adminUser.password === password) {
     document.getElementById("loginContainer").style.display = "none";
-    document.getElementById("userManagementContainer").style.display = "block";
+    document.getElementById("userManagementContainer").style.display = "flex";
     displayUserTable();
   } else {
     displayMessage("error", "Invalid email or password.");
@@ -166,7 +166,7 @@ usersData = JSON.parse(localStorage.getItem("usersData")) || [];
 if (usersData.length > 0) {
   const adminUser = usersData.find((user) => user.userType === "admin");
   if (adminUser) {
-    document.getElementById("loginContainer").style.display = "block";
+    document.getElementById("loginContainer").style.display = "flex";
   }
 } else {
   // Fetch user data from users.json and save it to local storage
@@ -177,7 +177,7 @@ if (usersData.length > 0) {
       localStorage.setItem("usersData", JSON.stringify(usersData));
       const adminUser = usersData.find((user) => user.userType === "admin");
       if (adminUser) {
-        document.getElementById("loginContainer").style.display = "block";
+        document.getElementById("loginContainer").style.display = "flex";
       }
     })
     .catch((error) => console.log(error));

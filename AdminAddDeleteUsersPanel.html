@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>User Management App</title>
   <link rel="stylesheet" type="text/css" href="AdminAddDeleteUsersPanel.css">
 </head>
+
 <body>
   <div id="loginContainer">
     <h1>Login</h1>
@@ -15,12 +17,22 @@
     </form>
   </div>
 
+
+
   <div id="userManagementContainer" style="display: none;">
+    <div class="navbar">
+      <ul>
+        <li><a id="LiAAdminNavigationPanel" href="AdminNavigationPanel.html">Admin Navigation Panel</a></li>
+        <li><a href="AdminAddDeleteUsersPanel.html">Admin Add/Delete Users Panel</a></li>
+        <li><a href="AdminLibrarianAddDeleteBooksPanel.html">Admin Librarian Add/Delete Books Panel</a></li>
+        <li><a href="CustomerBookBrowsing.html">Customer Book Browsing</a></li>
+        <li><a href="CustomerLoginForm.html">Customer Login Form</a></li>
+      </ul>
+    </div>
     <h1>User Management</h1>
     <div id="messageContainer"></div>
-
+    <h2>Add User</h2>
     <form id="addUserForm">
-      <h2>Add User</h2>
       <input type="email" id="userEmail" placeholder="Email" required autocomplete="off" autocorrect="off">
       <input type="password" id="userPassword" placeholder="Password" required autocomplete="off" autocorrect="off">
       <input type="text" id="userName" placeholder="Name" required autocomplete="off" autocorrect="off">
@@ -30,22 +42,24 @@
         <option value="librarian">Librarian</option>
         <option value="reader">Reader</option>
       </select>
-      <button type="button" onclick="addUser()">Add User</button>
+      <button type="button" class="btn-addUser" onclick="addUser()">Add User</button>
     </form>
 
-    <table id="userTable">
-      <thead>
-        <tr>
-          <th>Email</th>
-          <th>Password</th>
-          <th>Name</th>
-          <th>Surname</th>
-          <th>User Type</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div class="table-container">
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>User Type</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
 
     <div id="editFormContainer" style="display: none;">
       <h2>Edit User</h2>
@@ -59,12 +73,13 @@
           <option value="librarian">Librarian</option>
           <option value="reader">Reader</option>
         </select>
-        <button type="submit">Save</button>
-        <button type="button" onclick="closeEditForm()">Cancel</button>
+        <button class="btn-save" type="submit">Save</button>
+        <button class="btn-del" type="button" onclick="closeEditForm()">Cancel</button>
       </form>
     </div>
   </div>
 
   <script src="AdminAddDeleteUsersPanel.js"></script>
 </body>
+
 </html>

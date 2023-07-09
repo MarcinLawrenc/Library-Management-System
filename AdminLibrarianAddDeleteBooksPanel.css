@@ -1,137 +1,249 @@
-/* AdminLibrarianAddDeleteBooksPanel.css */
-
-/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F6F9FA;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-h1, h2 {
-  margin: 0;
-  padding: 0;
+/* Message Container */
+
+.error{
+    background-color: #FE7E7E;
+    padding: 30px;
+    border-left: 10px red solid;
 }
 
-/* Login Container */
+.success{
+    background-color: #5ACA75;
+    padding: 30px;
+    border-left: 10px green solid;
+}
+
+/* login container */
 #loginContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f2f2f2;
+    background-color: #004D67;
+    width: 80%;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
 }
 
-#loginForm {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#loginContainer h2 {
+    color: #FFA32C;
+    text-align: center;
 }
 
-#loginForm label {
-  font-weight: bold;
+#loginContainer input[type="email"],
+#loginContainer input[type="password"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
 }
 
-#loginForm input[type="email"],
-#loginForm input[type="password"] {
-  width: 250px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+#loginContainer button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #00B6DC;
+    cursor: pointer;
+    width: 100%;
+    margin: 5px 0 0 0;
 }
 
-#loginForm button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+.navbar {
+    background-color: #004D67;
+    width: 100%;
+    padding: 15px 0;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+}
+
+.navbar ul li {
+    margin: 10px;
+}
+
+.navbar ul li a {
+    color: #F6F9FA;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    color: #FFA32C;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+    .navbar ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
 }
 
 /* Book Management Container */
-#bookManagementContainer {
-  padding: 20px;
+#booksContainer {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    min-height: 100vh;
 }
 
-#messageContainer {
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-  color: #333;
+#booksContainer h2 {
+    color: #004D67;
 }
 
-#addBookForm,
-#editForm {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#booksContainer form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 20px 0;
 }
 
-#addBookForm label,
-#editForm label {
-  font-weight: bold;
+#booksContainer input[type="text"],
+#booksContainer input[type="number"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #68D7EE;
+    border-radius: 5px;
 }
 
-#addBookForm input[type="text"],
-#addBookForm input[type="number"],
-#addBookForm textarea,
-#editForm input[type="text"],
-#editForm input[type="number"],
-#editForm textarea {
-  width: 250px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+
+#booksContainer .table-container {
+    width: 100%;
 }
 
-#addBookForm textarea,
-#editForm textarea {
-  height: 100px;
+#booksContainer table {
+    min-width: 300px;
+    width: 100%;
 }
 
-#addBookForm button[type="submit"],
-#editForm button[type="submit"],
-#editForm button[type="button"] {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+#booksContainer table th,
+#booksContainer table td {
+    padding: 10px;
+    border-bottom: 1px solid #D9D9D9;
 }
 
-#bookTable {
-  width: 100%;
-  border-collapse: collapse;
+#booksContainer table tr:nth-child(even) {
+    background-color: #68D7EE;
 }
 
-#bookTable th,
-#bookTable td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+#booksContainer table tr:nth-child(odd) {
+    background-color: #F5D665;
 }
 
-#bookTable th:last-child,
-#bookTable td:last-child {
-  text-align: center;
+.btn-addBook{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #5ACA75;
+    cursor: pointer;
 }
 
-#bookTable tbody tr:hover {
-  background-color: #f2f2f2;
+.btn-edit{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #00B6DC;
+    cursor: pointer;
 }
+
+.btn-del{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #FE7E7E;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    #booksContainer table thead {
+        display: none;
+    }
+
+    #booksContainer table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #D9D9D9;
+    }
+
+    #booksContainer table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border: none;
+    }
+
+    #editFormContainer table thead {
+        display: none;
+    }
+
+    #editFormContainer table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #D9D9D9;
+    }
+
+    #editFormContainer table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border: none;
+    }
+}
+
+
+/* Edit Form Container */
 
 #editFormContainer {
-  margin-top: 20px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #001927;
+    color: #F6F9FA;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#editFormContainer h2 {
+    color: #FE7E7E;
+}
+
+#editFormContainer input[type="text"],
+#editFormContainer input[type="number"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #68D7EE;
+    border-radius: 5px;
 }

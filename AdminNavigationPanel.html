@@ -19,6 +19,7 @@
 
     li {
       float: left;
+      display: flex;
     }
 
     li a {
@@ -29,8 +30,8 @@
       text-decoration: none;
     }
 
-    li a:hover {
-      background-color: #111;
+    #LiAAdminNavigationPanel:hover, li a:hover {
+      color: rgb(0, 238, 255);
     }
 
     /* Styles for responsive divs */
@@ -51,11 +52,17 @@
       max-width: 100%;
       height: auto;
     }
+
+    #LiAAdminNavigationPanel{
+      color: rgb(255, 187, 0);
+    }
+
   </style>
 </head>
 <body>
   <!-- Navigation -->
   <ul>
+    <li ><a id="LiAAdminNavigationPanel" href="AdminNavigationPanel.html">Admin Navigation Panel</a></li>
     <li><a href="AdminAddDeleteUsersPanel.html">Admin Add/Delete Users Panel</a></li>
     <li><a href="AdminLibrarianAddDeleteBooksPanel.html">Admin Librarian Add/Delete Books Panel</a></li>
     <li><a href="CustomerBookBrowsing.html">Customer Book Browsing</a></li>

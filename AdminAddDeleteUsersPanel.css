@@ -1,114 +1,261 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #F6F9FA;
+    color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
+/* Message Container */
+
+.error{
+    background-color: #FE7E7E;
+    padding: 30px;
+    border-left: 10px red solid;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+.success{
+    background-color: #5ACA75;
+    padding: 30px;
+    border-left: 10px green solid;
 }
 
-.login-container {
-  background-color: #f7f7f7;
-  padding: 20px;
-  border-radius: 5px;
-  text-align: center;
+/* login container */
+#loginContainer {
+    background-color: #004D67;
+    width: 80%;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
 }
 
-.login-form input {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+#loginContainer h1 {
+    color: #FFA32C;
+    text-align: center;
 }
 
-.login-form button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+#loginContainer input[type="email"],
+#loginContainer input[type="password"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
 }
 
-.user-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+#loginContainer button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #00B6DC;
+    cursor: pointer;
+    width: 100%;
+    margin: 5px 0 0 0;
 }
 
-.user-table th,
-.user-table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+.navbar {
+    background-color: #004D67;
+    width: 100%;
+    padding: 15px 0;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
 }
 
-.user-table .actions-cell button {
-  margin-right: 5px;
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
 }
 
-.form-container {
-  background-color: #f7f7f7;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 5px;
-  display: none;
+.navbar ul li {
+    margin: 10px;
 }
 
-.form-container h2 {
-  margin-top: 0;
+.navbar ul li a {
+    color: #F6F9FA;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
 }
 
-.form-container input {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.navbar ul li a:hover {
+    color: #FFA32C;
 }
 
-.form-container select {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+@media screen and (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column;
+    }
+    .navbar ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
 }
 
-.form-container button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* User Management Container */
+#userManagementContainer {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    min-height: 100vh;
 }
 
-.message-container {
-  margin-top: 20px;
-  padding: 10px;
-  text-align: center;
+#userManagementContainer h1 {
+    color: #004D67;
 }
 
-.error {
-  background-color: #ff0000;
-  color: #fff;
+#userManagementContainer h2 {
+    color: #FFCD19;
 }
 
-.success {
-  background-color: #00cc00;
-  color: #fff;
+#userManagementContainer form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 20px 0;
 }
+
+#userManagementContainer input[type="email"],
+#userManagementContainer input[type="password"],
+#userManagementContainer input[type="text"],
+#userManagementContainer select {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #68D7EE;
+    border-radius: 5px;
+}
+
+
+.btn-addUser{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #5ACA75;
+    cursor: pointer;
+}
+
+.btn-edit{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #00B6DC;
+    cursor: pointer;
+}
+
+.btn-del{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #FE7E7E;
+    cursor: pointer;
+}
+
+#userManagementContainer .table-container {
+    width: 100%;
+}
+
+#userManagementContainer table {
+    min-width: 300px;
+    width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    #userManagementContainer table thead {
+        display: none;
+    }
+
+    #userManagementContainer table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #D9D9D9;
+    }
+
+    #userManagementContainer table td {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        border: none;
+    }
+}
+
+#userManagementContainer table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+#userManagementContainer table th,
+#userManagementContainer table td {
+    padding: 10px;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+#userManagementContainer table tr:nth-child(even) {
+    background-color: #68D7EE;
+}
+
+#userManagementContainer table tr:nth-child(odd) {
+    background-color: #F5D665;
+}
+
+#editFormContainer {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #001927;
+    color: #F6F9FA;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#editFormContainer h2 {
+    color: #FE7E7E;
+}
+
+#editFormContainer input[type="email"],
+#editFormContainer input[type="password"],
+#editFormContainer input[type="text"],
+#editFormContainer select {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #68D7EE;
+    border-radius: 5px;
+}
+
+.btn-save{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #5ACA75;
+    cursor: pointer;
+    margin: 0 0 10px 0;
+}
+
+/* #editFormContainer button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: #F6F9FA;
+    background-color: #5ACA75;
+    cursor: pointer;
+} */

@@ -1,84 +1,38 @@
- <!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="pl">
+<meta charset="utf-8">
+
 <head>
   <title>Navigation Example</title>
   <link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
-  <style>
-    /* Styles for navigation */
-    body{
-        font-family: 'Sora', sans-serif;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #001927;
-    }
-
-    li {
-      float: left;
-      display: flex;
-    }
-
-    li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-
-    #LiAAdminNavigationPanel:hover, li a:hover {
-      color: rgb(0, 238, 255);
-    }
-
-    /* Styles for responsive divs */
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-gap: 20px;
-      margin: 20px;
-    }
-
-    .photo-grid-item {
-      border: 1px solid #ccc;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .photo-grid-item img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    #LiAAdminNavigationPanel{
-      color: rgb(255, 187, 0);
-    }
-
-  </style>
+  <link href="./AdminNavigationPanel.css" rel="stylesheet">
 </head>
+
 <body>
   <!-- Navigation -->
   <ul>
-    <li ><a id="LiAAdminNavigationPanel" href="AdminNavigationPanel.html">Admin Navigation Panel</a></li>
-    <li><a href="AdminAddDeleteUsersPanel.html">Admin Add/Delete Users Panel</a></li>
-    <li><a href="AdminLibrarianAddDeleteBooksPanel.html">Admin Librarian Add/Delete Books Panel</a></li>
-    <li><a href="CustomerBookBrowsing2.html">Customer Book Browsing</a></li>
+    <li><a id="LiAAdminNavigationPanel" href="AdminNavigationPanel.html">Library Admin Navigation Panel</a></li>
   </ul>
 
   <!-- Photo Grid -->
   <div class="photo-grid">
-    <div class="photo-grid-item">
-      <img src="https://via.placeholder.com/300" alt="Photo 1">
+    <div class="cell" onclick="location.href='./CustomerBookBrowsing2.html'">
+      <img src="./projectImages/home.svg" alt="Photo 1">
+      <h2>Home Page</h2>
     </div>
-    <div class="photo-grid-item">
-      <img src="https://via.placeholder.com/300" alt="Photo 2">
+    <div class="cell" onclick="location.href='./AdminAddDeleteUsersPanel.html'">
+      <img src="./projectImages/users.svg" alt="Photo 2">
+      <h2>Users Management</h2>
     </div>
-    <div class="photo-grid-item">
-      <img src="https://via.placeholder.com/300" alt="Photo 3">
+    <div class="cell" onclick="location.href='./AdminLibrarianAddDeleteBooksPanel.html'">
+      <img src="./projectImages/book-copy.svg" alt="Photo 3">
+      <h2>Books Management</h2>
+    </div>
+    <div class="cell" onclick="location.href='./?'">
+      <img src="./projectImages/book-open-check.svg" alt="Photo 4">
+      <h2>Reservation Management</h2>
     </div>
   </div>
 </body>
+
 </html>

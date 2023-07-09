@@ -1,0 +1,75 @@
+
+    /* Styles for navigation */
+    body {
+      font-family: 'Sora', sans-serif;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #001927;
+    }
+
+    li {
+      float: left;
+      display: flex;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+
+    #LiAAdminNavigationPanel {
+      color: rgb(255, 187, 0);
+    }
+
+    .photo-grid{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .cell{
+        padding: 10px;
+        margin: 10px;
+        width: 25%;
+        height: 25%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        border: 5px grey solid;
+        transition: background-color 0.5s ease;
+    }
+
+    .cell:hover{
+        background-color: #5aca74c0;
+        border-color: #00B6DC;
+    }
+
+    img {
+        width: 40%;
+    }
+
+    h2{
+        font-size: 100%;
+    }
+
+    @media (max-width: 768px) {
+        .cell h2 {
+            display: none;
+        }
+    }
+
+    .button{
+        all: unset;
+    }
+
+    /* Styles for responsive divs */

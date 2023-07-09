@@ -54,7 +54,7 @@ function addBook(event) {
   const bookGenre = document.getElementById('bookGenre').value;
 
 
-  const existingBook = booksData.find((book) => book.authorSurname === authorSurname && book.bookTitle === bookTitle);
+   
   if (existingBook) {
     displayMessage('error', 'Book with the same author surname and title already exists.');
   } else {

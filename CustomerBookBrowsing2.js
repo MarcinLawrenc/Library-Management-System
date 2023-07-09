@@ -74,7 +74,7 @@ function showBookDetails(book) {
 
   bookDetailsContainer.appendChild(bookDetails);
   bookDetailsContainer.appendChild(closeButton);
-  
+
   document.body.appendChild(bookDetailsContainer);
 }
 
@@ -99,14 +99,18 @@ closeShopping.addEventListener('click', ()=>{
 
 
 function addBookToCart(book) {
-  booksCartData.push(book);
+  const bookID = book.bookID;
+  const isInCart = booksCartData.some((book) => book.bookID === bookID);
+  if (isInCart) {
+  console.log ('Book with the same author surname and title already exists.');}
+  else { booksCartData.push(book);
   localStorage.setItem('booksCartData', JSON.stringify(booksCartData));
   const bookCount = countBooksInLocalStorage();
   console.log('Number of books in local storage:', bookCount);
 
   const bookCountSpan = document.getElementById('bookCountSpan');
   bookCountSpan.textContent = bookCount.toString();
-  reloadCard();
+  reloadCard();}
 }
 
 function countBooksInLocalStorage() {
@@ -144,12 +148,22 @@ function reloadCard() {
               <div>${book.bookTitle}</div>
               <div>${book.authorName} ${book.authorSurname}</div>
               <div>
-                <button>Remove</button>
+              <button onclick="deleteBook('${book.bookID}')">Delete</button>
         
               </div>`;
               listCard.appendChild(newDiv);
   });
 }
 
+// Delete a book
+function deleteBook(bookID) {
+  if (confirm('Are you sure you want to delete this book?')) {
+    booksCartData = booksCartData.filter((book) => book.bookID !== bookID);
+    localStorage.setItem('booksData', JSON.stringify(
+    booksCartData));
+    reloadCard();
+    
+  }
+}
 
 

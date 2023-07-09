@@ -161,6 +161,11 @@ function deleteBook(bookID) {
     booksCartData = booksCartData.filter((book) => book.bookID !== bookID);
     localStorage.setItem('booksData', JSON.stringify(
     booksCartData));
+
+    const bookCount = countBooksInLocalStorage();
+    console.log('Number of books in local storage:', bookCount);
+    const bookCountSpan = document.getElementById('bookCountSpan');
+    bookCountSpan.textContent = bookCount.toString();
     reloadCard();
     
   }

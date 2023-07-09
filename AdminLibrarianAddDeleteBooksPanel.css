@@ -96,6 +96,10 @@ body {
     color: #FFA32C;
 }
 
+.nav-active{
+    color: #FFA32C !important;
+}
+
 @media screen and (max-width: 600px) {
     .navbar ul {
         flex-direction: column;

@@ -251,6 +251,10 @@ body {
     margin: 0 0 10px 0;
 }
 
+.nav-active{
+    color: #FFA32C !important;
+}
+
 /* #editFormContainer button {
     padding: 10px;
     border: none;

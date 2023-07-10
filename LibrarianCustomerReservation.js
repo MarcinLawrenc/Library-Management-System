@@ -134,7 +134,7 @@ function getBookTitle(bookID) {
 
 function getUserId(email) {
   // Assuming booksData is an array containing book objects
-  for (let i = 0; i < booksData.length; i++) {
+  for (let i = 0; i < usersData.length; i++) {
     if (usersData[i].email === email) {
       return usersData[i].UserId;
     }
@@ -145,7 +145,7 @@ function getUserId(email) {
 
 function getUserName(email) {
   // Assuming booksData is an array containing book objects
-  for (let i = 0; i < booksData.length; i++) {
+  for (let i = 0; i < usersData.length; i++) {
     if (usersData[i].email === email) {
       return usersData[i].name;
     }
@@ -156,7 +156,7 @@ function getUserName(email) {
 
 function getUserSurname(email) {
   // Assuming booksData is an array containing book objects
-  for (let i = 0; i < booksData.length; i++) {
+  for (let i = 0; i < usersData.length; i++) {
     if (usersData[i].email === email) {
       return usersData[i].surname;
     }

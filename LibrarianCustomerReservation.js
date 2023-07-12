@@ -50,7 +50,7 @@ function addBorrow(event) {
 
   const borrowID = countBorrowsInLocalStorage();
   const bookID = document.getElementById('bookID').value;
-  const bookTitle = getBookTitle(bookID);
+  const bookTitle = getBookTitle2(booksData, bookID);
   const email = document.getElementById('userEmail').value;
   const UserId = getUserId(email);
   const name = getUserName(email);
@@ -131,6 +131,16 @@ function getBookTitle(bookID) {
   return "Book not found"; // Return a message if the book ID is not found
 }
 
+function getBookTitle2(arrayName, bookIDFromTable) {
+  // Assuming booksData is an array containing book objects
+  for (let i = 0; i < arrayName.length; i++) {
+    if (arrayName[i].bookID === bookIDFromTable) {
+      return arrayName[i].bookTitle;
+    }
+  }
+
+  return "Book not found"; // Return a message if the book ID is not found
+}
 
 function getUserId(email) {
   // Assuming booksData is an array containing book objects

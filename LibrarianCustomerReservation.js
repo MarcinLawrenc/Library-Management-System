@@ -50,16 +50,16 @@ function addBorrow(event) {
 
   const borrowID = countBorrowsInLocalStorage();
   const bookID = document.getElementById('bookID').value;
-  const bookTitle = getBookTitle2(booksData, bookID);
   const email = document.getElementById('userEmail').value;
-  const UserId = getUserId(email);
-  const name = getUserName(email);
-  const surname = getUserSurname(email);
-  const authorName = getBookAuthorName(bookID);
-  const authorSurname = getBookAuthorSurame(bookID);
-  const bookQuantity = "";
-  const booksBorrowedQuantity = "";
-  const booksReservedQuantity = "";
+  const UserId = getArrayValue(usersData, email,  'email', 'UserId')
+  const name = getArrayValue(usersData, email,  'email', 'name')
+  const surname = getArrayValue(usersData, email,  'email', 'surname')
+  const bookTitle = getArrayValue(booksData, bookID,  'bookID', 'bookTitle')
+  const authorName = getArrayValue(booksData, bookID,  'bookID', 'authorName')
+  const authorSurname = getArrayValue(booksData, bookID,  'bookID', 'authorSurname')
+  const bookQuantity = getArrayValue(booksData, bookID,  'bookID', 'bookQuantity');
+  const booksBorrowedQuantity = getArrayValue(booksData, bookID,  'bookID', 'booksBorrowedQuantity');
+  const booksReservedQuantity = getArrayValue(booksData, bookID,  'bookID', 'booksReservedQuantity');
    
     const newBorrow = {
       borrowID,
@@ -96,79 +96,11 @@ function countBorrowsInLocalStorage() {
   
 }
 
-function getBookAuthorSurame(bookID) {
-  // Assuming booksData is an array containing book objects
-  for (let i = 0; i < booksData.length; i++) {
-    if (booksData[i].bookID === bookID) {
-      return booksData[i].authorSurname;
-    }
-  }
-
-  return "Book not found"; // Return a message if the book ID is not found
-}
-
-
-function getBookAuthorName(bookID) {
-  // Assuming booksData is an array containing book objects
-  for (let i = 0; i < booksData.length; i++) {
-    if (booksData[i].bookID === bookID) {
-      return booksData[i].authorName;
-    }
-  }
-
-  return "Book not found"; // Return a message if the book ID is not found
-}
-
-
-function getBookTitle(bookID) {
-  // Assuming booksData is an array containing book objects
-  for (let i = 0; i < booksData.length; i++) {
-    if (booksData[i].bookID === bookID) {
-      return booksData[i].bookTitle;
-    }
-  }
-
-  return "Book not found"; // Return a message if the book ID is not found
-}
-
-function getBookTitle2(arrayName, bookIDFromTable) {
+function getArrayValue(arrayName,bookParameterFromTable, bookParameterFromArray, bookOutputValue) {
   // Assuming booksData is an array containing book objects
   for (let i = 0; i < arrayName.length; i++) {
-    if (arrayName[i].bookID === bookIDFromTable) {
-      return arrayName[i].bookTitle;
-    }
-  }
-
-  return "Book not found"; // Return a message if the book ID is not found
-}
-
-function getUserId(email) {
-  // Assuming booksData is an array containing book objects
-  for (let i = 0; i < usersData.length; i++) {
-    if (usersData[i].email === email) {
-      return usersData[i].UserId;
-    }
-  }
-
-  return "Book not found"; // Return a message if the book ID is not found
-}
-
-function getUserName(email) {
-  // Assuming booksData is an array containing book objects
-  for (let i = 0; i < usersData.length; i++) {
-    if (usersData[i].email === email) {
-      return usersData[i].name;
-    }
-  }
-
-  return "Book not found"; // Return a message if the book ID is not found
-}
-
-function getUserSurname(email) {
-  // Assuming booksData is an array containing book objects
-  for (let i = 0; i < usersData.length; i++) {
-    if (usersData[i].email === email) {
-      return usersData[i].surname;
+    if (arrayName[i][bookParameterFromArray] === bookParameterFromTable) {
+      return arrayName[i][bookOutputValue];
     }
   }
 
